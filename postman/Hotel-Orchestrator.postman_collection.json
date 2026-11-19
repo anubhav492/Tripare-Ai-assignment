@@ -1,0 +1,113 @@
+{
+  "info": {
+    "name": "Hotel Offer Orchestrator",
+    "description": "Requests for the Hotel Offer Orchestrator supplier and final offer APIs.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000"
+    }
+  ],
+  "item": [
+    {
+      "name": "Supplier A - Delhi",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/supplierA/hotels?city=delhi"
+      }
+    },
+    {
+      "name": "Supplier B - Delhi",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/supplierB/hotels?city=delhi"
+      }
+    },
+    {
+      "name": "All hotels - Delhi",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/hotels?city=delhi"
+      }
+    },
+    {
+      "name": "Hotels with minimum price",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/hotels?city=delhi&minPrice=5000"
+      }
+    },
+    {
+      "name": "Hotels with maximum price",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/hotels?city=delhi&maxPrice=6000"
+      }
+    },
+    {
+      "name": "Hotels within price range",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/hotels?city=delhi&minPrice=5000&maxPrice=6000"
+      }
+    },
+    {
+      "name": "Supplier A - Unknown city",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/supplierA/hotels?city=unknown-city"
+      }
+    },
+    {
+      "name": "Supplier B - Unknown city",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/supplierB/hotels?city=unknown-city"
+      }
+    },
+    {
+      "name": "All hotels - Unknown city",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/hotels?city=unknown-city"
+      }
+    },
+    {
+      "name": "Exact price - Inclusive bounds",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/hotels?city=delhi&minPrice=5340&maxPrice=5340"
+      }
+    },
+    {
+      "name": "Invalid missing city",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/hotels"
+      }
+    },
+    {
+      "name": "Invalid price",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/hotels?city=delhi&minPrice=abc"
+      }
+    },
+    {
+      "name": "Invalid city",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/hotels?city="
+      }
+    },
+    {
+      "name": "Invalid price range",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/hotels?city=delhi&minPrice=6000&maxPrice=5000"
+      }
+    }
+  ]
+}
